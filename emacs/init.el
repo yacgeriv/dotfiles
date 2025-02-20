@@ -24,6 +24,7 @@
   (require 'dap-cpptools)
   (yas-global-mode))
 
+
 (setq-default
     indent-tabs-mode nil
     tab-width 4
@@ -51,6 +52,9 @@
 (add-hook 'c++-mode-hook 'display-line-numbers-mode)
 (add-hook 'c-mode-hook 'display-line-numbers-mode)
 (setq linum-format "%3d ")
+
+(setq split-width-threshold nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
