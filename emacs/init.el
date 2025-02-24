@@ -8,46 +8,16 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
-(which-key-mode)
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
-
-(setq gc-cons-threshold (* 100 1024 1024)
-      read-process-output-max (* 1024 1024)
-      treemacs-space-between-root-nodes nil
-      company-idle-delay 0.0
-      company-minimum-prefix-length 1
-      lsp-idle-delay 0.1)
-
-(with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  (require 'dap-cpptools)
-  (yas-global-mode))
-
-
 (setq-default
     indent-tabs-mode nil
     tab-width 4
     tab-stop-list (quote (4 8 12 16))
-    )
+)
 
-(setq lsp-headerline-breadcrumb-enable nil)
+(setq c++-tab-always-indent t)
+(setq c-basic-offset 4)       
+(setq c-indent-level 4)       
 
-(defun my-c-mode-common-hook ()
- ;; my customizations for all of c-mode, c++-mode, objc-mode, java-mode
- (c-set-offset 'substatement-open 0)
- ;; other customizations can go here
-
- (setq c++-tab-always-indent t)
- (setq c-basic-offset 4)                  ;; Default is 2
- (setq c-indent-level 4)                  ;; Default is 2
-
- (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
- (setq tab-width 4)
- (setq indent-tabs-mode t)  ; use spaces only if nil
- )
-
-(add-hook 'c-mode-hook 'my-c-mode-common-hook)
 
 (add-hook 'c++-mode-hook 'display-line-numbers-mode)
 (add-hook 'c-mode-hook 'display-line-numbers-mode)
