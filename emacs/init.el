@@ -6,24 +6,23 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+
 (package-initialize)
-
-(setq-default
-    indent-tabs-mode nil
-    tab-width 4
-    tab-stop-list (quote (4 8 12 16))
-)
-
-(setq c++-tab-always-indent t)
-(setq c-basic-offset 4)       
-(setq c-indent-level 4)       
-
 
 (add-hook 'c++-mode-hook 'display-line-numbers-mode)
 (add-hook 'c-mode-hook 'display-line-numbers-mode)
 (setq linum-format "%3d ")
 
+(setq c-default-style "linux")
+(defun my-c-mode-hook ()
+  (setq indent-tabs-mode t)
+  (setq tab-width 8))
+(add-hook 'c-mode-hook 'my-c-mode-hook)
+
 (setq split-width-threshold nil)
+
+(set-frame-parameter nil 'alpha-background 70)
+(add-to-list 'default-frame-alist '(alpha-background . 70))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
