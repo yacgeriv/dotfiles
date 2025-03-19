@@ -5,9 +5,15 @@
 (tool-bar-mode -1)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
-(package-initialize)
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("gnu-devel" . "https://elpa.gnu.org/devel/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("melpa" . "https://melpa.org/packages/")))
+
+(when (< emacs-major-version 27)
+  (package-initialize))
 
 (add-hook 'c++-mode-hook 'display-line-numbers-mode)
 (add-hook 'c-mode-hook 'display-line-numbers-mode)
@@ -21,8 +27,10 @@
 
 (setq split-width-threshold nil)
 
-(set-frame-parameter nil 'alpha-background 70)
-(add-to-list 'default-frame-alist '(alpha-background . 70))
+(set-frame-parameter nil 'alpha-background 100)
+(add-to-list 'default-frame-alist '(alpha-background . 100))
+
+(ac-config-default)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
