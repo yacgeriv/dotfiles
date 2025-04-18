@@ -35,6 +35,14 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(defun compile-c-program ()
+  (interactive)
+  (defvar foo)
+  (setq foo (concat "sh compile.sh"))
+  (shell-command foo))
+ 
+(global-set-key [C-f1] 'compile-c-program)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
