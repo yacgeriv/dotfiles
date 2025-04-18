@@ -38,7 +38,13 @@
 (defun compile-c-program ()
   (interactive)
   (defvar foo)
-  (setq foo (concat "sh compile.sh"))
+  (if (eq system-type 'gnu/linux)
+      (setq foo (concat "sh compile.sh"))
+    )
+    (if (eq system-type 'windows-nt)
+      (setq foo (concat "compile.bat"))
+    )
+  
   (shell-command foo))
  
 (global-set-key [C-f1] 'compile-c-program)
@@ -49,7 +55,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-bullets gruber-darker-theme yasnippet which-key projectile minimal-theme lsp-ui inkpot-theme helm-xref helm-lsp flycheck eziam-themes dap-mode company catppuccin-theme badwolf-theme badger-theme almost-mono-themes ahungry-theme)))
+   '(mpv org-bullets gruber-darker-theme yasnippet which-key projectile minimal-theme lsp-ui inkpot-theme helm-xref helm-lsp flycheck eziam-themes dap-mode company catppuccin-theme badwolf-theme badger-theme almost-mono-themes ahungry-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
