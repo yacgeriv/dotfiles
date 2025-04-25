@@ -51,6 +51,7 @@
 (global-set-key (kbd "C-,") 'duplicate-line)
 
 (require 'dashboard)
+(setq dashboard-startup-banner "~/.emacs.d/pfp.jpg")
 (dashboard-setup-startup-hook)
 
 (custom-set-variables
