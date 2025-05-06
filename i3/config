@@ -70,6 +70,13 @@ bindsym $mod+d exec --no-startup-id ymenu
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+
+client.focused          #e2432d #285577 #ffffff #e2432d   #e2432d
+client.focused_inactive #e2432d #5f676a #ffffff #e2432d   #e2432d
+client.unfocused        #e2432d #222222 #888888 #e2432d   #e2432d
+client.urgent           #e2432d #900000 #ffffff #e2432d   #e2432d
+client.placeholder      #e2432d #0c0c0c #ffffff #e2432d   #e2432d
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
