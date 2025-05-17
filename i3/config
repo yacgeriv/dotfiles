@@ -71,11 +71,11 @@ bindsym $mod+d exec --no-startup-id ymenu
 
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
 
-client.focused          #e2432d #285577 #ffffff #e2432d   #e2432d
-client.focused_inactive #e2432d #5f676a #ffffff #e2432d   #e2432d
-client.unfocused        #e2432d #222222 #888888 #e2432d   #e2432d
-client.urgent           #e2432d #900000 #ffffff #e2432d   #e2432d
-client.placeholder      #e2432d #0c0c0c #ffffff #e2432d   #e2432d
+client.focused          #a76486 #285577 #ffffff #a76486   #a76486 
+client.focused_inactive #a76486 #5f676a #ffffff #a76486   #a76486 
+client.unfocused        #a76486 #222222 #888888 #a76486   #a76486
+client.urgent           #a76486 #900000 #ffffff #a76486   #a76486
+client.placeholder      #a76486 #0c0c0c #ffffff #a76486   #a76486
 
 # change focus
 bindsym $mod+j focus left
