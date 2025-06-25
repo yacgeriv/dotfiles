@@ -78,6 +78,17 @@
 (add-hook 'c-mode-hook 'lsp-mode)
 (add-hook 'c++-mode-hook 'lsp-mode)
 
+(setq completion-ignore-case t)
+(setq read-buffer-completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+(setq company-dabbrev-ignore-case t)
+(setq company-dabbrev-downcase nil)
+(setq company-completion-ignore-case t) 
+
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "TAB") 'company-complete-selection)
+  (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
+
 (electric-pair-mode t)
 
 (custom-set-variables
